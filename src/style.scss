@@ -1,0 +1,43 @@
+$primaryColor: #4527a4;
+$red: #f5222d;
+$orange: #fa8c16;
+$yellow: #fadb14;
+$green: #7cb305;
+@import './assets/css/_animation.scss';
+
+.wp-block-b-blocks-b-form{
+	width: 100%;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.wp-block-b-blocks-form-wrapper {
+		box-sizing: border-box;
+		width: 100%;
+		// display: flex;
+		.b-blocks-form-button-wrapper{
+			.b-blocks-form-button-navigation-wrapper{
+				display: flex;
+				flex-wrap: nowrap;
+				gap: 3px;
+				font-size: 15px;
+				>*{
+					margin:0;
+				}
+				.b-blocks-form-button-navigation-text{}
+			}
+		}
+		.b-blocks-form-submitBtn {
+				background-color: #ff7a00;
+				color: white;
+				border: none;
+				font-size: 15px;
+				border-radius: 4px;
+				transition: all 0.3s;
+				padding: 10px 30px;
+				cursor: pointer;
+			}
+
+	}
+}

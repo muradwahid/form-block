@@ -1,0 +1,1204 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/b-form",
+	"version": "1.0.0",
+	"title": "Form",
+	"category": "widgets",
+	"description": "Short description of the block",
+	"keywords": [
+		"form",
+		"register",
+		"login",
+		"sign in",
+		"sign up"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"clientId": {
+			"type": "string",
+			"default": ""
+		},
+		"form": {
+			"type": "object",
+			"default": {
+				"formType": "register"
+			}
+		},
+		"align": {
+			"type": "string",
+			"default": ""
+		},
+		"general": {
+			"type": "object",
+			"default": {
+				"containerBox": {
+					"width": {
+						"desktop": "100%",
+						"tablet": "100%",
+						"mobile": "100%"
+					},
+					"alignment": {
+						"desktop": "center",
+						"tablet": "center",
+						"mobile": "center"
+					}
+				},
+				"formWrapper": {
+					"width": {
+						"desktop": "100%",
+						"tablet": "100%",
+						"mobile": "100%"
+					},
+					"margin": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"padding": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"border": {},
+					"bg": {},
+					"shadow": []
+				},
+				"form": {
+					"width": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"margin": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": {
+							"top": 0,
+							"right": 0,
+							"bottom": 0,
+							"left": 0
+						}
+					},
+					"padding": {
+						"desktop": "5px",
+						"tablet": "5px",
+						"mobile": "5px"
+					},
+					"border": {},
+					"bg": {},
+					"shadow": []
+				}
+			}
+		},
+		"formHeader": {
+			"type": "object",
+			"default": {
+				"content": "",
+				"header": {
+					"logo": {
+						"url": {},
+						"resolution": "full",
+						"position": {
+							"desktop": "row",
+							"tablet": "row",
+							"mobile": "column"
+						},
+						"height": {
+							"desktop": "100px",
+							"tablet": "100px",
+							"mobile": "100px"
+						},
+						"width": {
+							"desktop": "100px",
+							"tablet": "100px",
+							"mobile": "100px"
+						},
+						"margin": {
+							"desktop": "",
+							"tablet": "",
+							"mobile": ""
+						},
+						"padding": {
+							"desktop": "",
+							"tablet": "",
+							"mobile": ""
+						},
+						"border": {},
+						"radius": {},
+						"shadow": {}
+					},
+					"title": {
+						"text": "",
+						"margin": {
+							"desktop": {},
+							"tablet": {},
+							"mobile": {}
+						},
+						"padding": {
+							"desktop": {},
+							"tablet": {},
+							"mobile": {}
+						},
+						"color": "",
+						"bg": {},
+						"border": {},
+						"radius": {},
+						"typography": {
+							"fontWeight": 700,
+							"fontSize": {
+								"desktop": "26px"
+							}
+						}
+					},
+					"subTitle": {
+						"text": "",
+						"margin": {
+							"desktop": {},
+							"tablet": {},
+							"mobile": {}
+						},
+						"padding": {
+							"desktop": {},
+							"tablet": {},
+							"mobile": {}
+						},
+						"color": "",
+						"bg": {},
+						"border": {},
+						"radius": {},
+						"typography": {}
+					},
+					"width": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"height": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"margin": {
+						"desktop": {},
+						"tablet": {},
+						"mobile": {}
+					},
+					"padding": {
+						"desktop": {},
+						"tablet": {},
+						"mobile": {}
+					},
+					"border": {},
+					"radius": {},
+					"bg": {
+						"color": "#0000"
+					}
+				},
+				"image": {
+					"url": "",
+					"img": {
+						"url": "",
+						"alt": ""
+					},
+					"resolution": "full",
+					"position": {
+						"desktop": "row",
+						"tablet": "row",
+						"mobile": "column"
+					},
+					"height": {
+						"desktop": "100%",
+						"tablet": "100%",
+						"mobile": "100%"
+					},
+					"width": {
+						"desktop": "250px",
+						"tablet": "100%",
+						"mobile": "100%"
+					},
+					"margin": {
+						"desktop": {
+							"top": "",
+							"right": "",
+							"bottom": "",
+							"left": ""
+						},
+						"tablet": {
+							"top": "",
+							"right": "",
+							"bottom": "",
+							"left": ""
+						},
+						"mobile": {
+							"top": "",
+							"right": "",
+							"bottom": "",
+							"left": ""
+						}
+					},
+					"padding": {
+						"desktop": {
+							"top": "",
+							"right": "",
+							"bottom": "",
+							"left": ""
+						},
+						"tablet": {
+							"top": "",
+							"right": "",
+							"bottom": "",
+							"left": ""
+						},
+						"mobile": {
+							"top": "",
+							"right": "",
+							"bottom": "",
+							"left": ""
+						}
+					},
+					"border": {},
+					"radius": {}
+				}
+			}
+		},
+		"socialSignUp": {
+			"type": "object",
+			"default": {
+				"google": {
+					"show": false,
+					"clientId": "",
+					"text": "Sign up with Google"
+				},
+				"facebook": {
+					"show": false,
+					"clientId": "",
+					"text": "Sign up with Facebook"
+				},
+				"separator": {
+					"show": true,
+					"type": "text",
+					"text": "Or"
+				}
+			}
+		},
+		"formFields": {
+			"type": "object",
+			"default": {
+				"fields": [
+					{
+						"type": "username",
+						"label": {
+							"text": "Username"
+						},
+						"placeholder": {
+							"text": "Username"
+						},
+						"required": false,
+						"width": {
+							"desktop": "100%",
+							"tablet": "100%",
+							"mobile": "100%"
+						},
+						"device": "desktop",
+						"icon": {
+							"url": "",
+							"type": "upload",
+							"svg": ""
+						}
+					},
+					{
+						"type": "email",
+						"label": {
+							"text": "Email"
+						},
+						"placeholder": {
+							"text": "Email"
+						},
+						"required": true,
+						"width": {
+							"desktop": "100%",
+							"tablet": "100%",
+							"mobile": "100%"
+						},
+						"device": "desktop",
+						"icon": {
+							"url": "",
+							"type": "upload",
+							"svg": ""
+						}
+					},
+					{
+						"type": "password",
+						"label": {
+							"text": "Password"
+						},
+						"placeholder": {
+							"text": "Password"
+						},
+						"required": true,
+						"width": {
+							"desktop": "100%",
+							"tablet": "100%",
+							"mobile": "100%"
+						},
+						"device": "desktop",
+						"icon": {
+							"url": "",
+							"type": "upload",
+							"svg": ""
+						}
+					}
+				],
+				"input": {
+					"margin": {
+						"desktop": {},
+						"tablet": {},
+						"mobile": {}
+					},
+					"padding": {
+						"desktop": {
+							"top": "10px",
+							"left": "24px",
+							"bottom": "10px"
+						},
+						"tablet": {
+							"top": "10px",
+							"left": "24px",
+							"bottom": "10px"
+						},
+						"mobile": {
+							"top": "10px",
+							"left": "24px",
+							"bottom": "10px"
+						}
+					},
+					"txtAlign": "left",
+					"normal": {
+						"text": "",
+						"placeholder": "",
+						"bg": "",
+						"border": {
+							"width": "1px",
+							"color": "#ccc"
+						},
+						"radius": {
+							"top": "3px",
+							"right": "3px",
+							"bottom": "3px",
+							"left": "3px"
+						}
+					},
+					"focus": {
+						"placeholder": "",
+						"bg": "",
+						"border": {},
+						"radius": {}
+					},
+					"typography": {}
+				},
+				"showLabel": true,
+				"showRequiredMark": false,
+				"passVisibilityIcon": false,
+				"fieldIcons": false,
+				"showPassStrengthMeter": false,
+				"showPassStrengthText": false,
+				"passStrengthText": "default",
+				"weakPass": true
+			}
+		},
+		"formLabel": {
+			"type": "object",
+			"default": {
+				"margin": {
+					"desktop": {},
+					"tablet": {},
+					"mobile": {}
+				},
+				"padding": {
+					"desktop": {},
+					"tablet": {},
+					"mobile": {}
+				},
+				"typography": {},
+				"color": {
+					"text": "",
+					"bg": ""
+				},
+				"border": {},
+				"radius": {}
+			}
+		},
+		"fieldIcons": {
+			"type": "object",
+			"default": {
+				"passVisibility": {
+					"iconSize": {
+						"desktop": "16px",
+						"tablet": "16px",
+						"mobile": "16px"
+					},
+					"openColor": "",
+					"closeColor": "",
+					"vertical": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"horizontal": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					}
+				},
+				"icon": {
+					"iconSize": {
+						"desktop": 16,
+						"tablet": 16,
+						"mobile": 16
+					},
+					"color": "",
+					"vertical": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					},
+					"horizontal": {
+						"desktop": "",
+						"tablet": "",
+						"mobile": ""
+					}
+				}
+			}
+		},
+		"weakPassword": {
+			"type": "object",
+			"default": {
+				"option": "default",
+				"validation": {
+					"length": 8,
+					"uppercase": true,
+					"lowercase": true,
+					"number": true,
+					"specialChar": true
+				}
+			}
+		},
+		"password": {
+			"type": "object",
+			"default": {
+				"container": {
+					"desktop": {
+						"width": "",
+						"height": "",
+						"margin": {},
+						"padding": {}
+					},
+					"tablet": {
+						"width": "",
+						"height": "",
+						"margin": {},
+						"padding": {}
+					},
+					"mobile": {
+						"width": "",
+						"height": "",
+						"margin": {},
+						"padding": {}
+					},
+					"border": {},
+					"radius": {},
+					"bg": {
+						"color": "#0000"
+					}
+				},
+				"meter": {
+					"desktop": {
+						"width": "",
+						"height": "",
+						"margin": {},
+						"padding": {}
+					},
+					"tablet": {
+						"width": "",
+						"height": "",
+						"margin": {},
+						"padding": {}
+					},
+					"mobile": {
+						"width": "",
+						"height": "",
+						"margin": {},
+						"padding": {}
+					},
+					"border": {},
+					"radius": {}
+				},
+				"passStrengthTxt": {
+					"veryWeak": "Very Weak",
+					"weak": "Weak Password",
+					"medium": "Medium Password",
+					"strong": "Strong Password",
+					"desktop": {
+						"margin": {},
+						"padding": {}
+					},
+					"tablet": {
+						"margin": {},
+						"padding": {}
+					},
+					"mobile": {
+						"margin": {},
+						"padding": {}
+					},
+					"typography": {}
+				},
+				"colors": {
+					"veryWeak": "",
+					"weak": "",
+					"medium": "",
+					"strong": "",
+					"bg": {}
+				}
+			}
+		},
+		"button": {
+			"type": "object",
+			"default": {
+				"button": {
+					"text": "Submit"
+				},
+				"navigation": {
+					"isNavigation": true,
+					"first": {
+						"text": "Already have an account?"
+					},
+					"second": {
+						"text": "Sign In",
+						"url": ""
+					}
+				},
+				"spinner": {
+					"show": false
+				},
+				"signup": {
+					"text": "Register",
+					"desktop": {
+						"margin": {},
+						"padding": {
+							"top": "12px",
+							"left": "25px",
+							"bottom": "12px",
+							"right": "25px"
+						},
+						"justify": "space-between",
+						"displayAs": "row",
+						"alignment": "left",
+						"width": "",
+						"height": ""
+					},
+					"tablet": {
+						"margin": {},
+						"padding": {
+							"top": "12px",
+							"left": "25px",
+							"bottom": "12px",
+							"right": "25px"
+						},
+						"justify": "space-between",
+						"displayAs": "row",
+						"alignment": "left",
+						"width": "",
+						"height": ""
+					},
+					"mobile": {
+						"margin": {},
+						"padding": {
+							"top": "12px",
+							"left": "25px",
+							"bottom": "12px",
+							"right": "25px"
+						},
+						"justify": "space-between",
+						"displayAs": "row",
+						"alignment": "left",
+						"width": "",
+						"height": ""
+					},
+					"typography": {},
+					"normal": {
+						"color": "#fff",
+						"bg": {
+							"color": "#146EF5"
+						},
+						"border": {},
+						"radius": {}
+					},
+					"hover": {
+						"color": "#fff",
+						"bg": {
+							"color": "#146EF5"
+						},
+						"border": {},
+						"radius": {}
+					},
+					"animation": "none",
+					"spinner": {
+						"show": false,
+						"position": 0,
+						"color": ""
+					}
+				},
+				"signin": {
+					"text": {
+						"first": "",
+						"second": "Sign In",
+						"link": ""
+					},
+					"desktop": {
+						"margin": {},
+						"padding": {},
+						"displayAs": "row",
+						"justify": "start",
+						"alignment": "baseline",
+						"containerWidth": "",
+						"width": "",
+						"height": ""
+					},
+					"tablet": {
+						"margin": {},
+						"padding": {},
+						"displayAs": "row",
+						"justify": "start",
+						"alignment": "baseline",
+						"containerWidth": "",
+						"width": "",
+						"height": ""
+					},
+					"mobile": {
+						"margin": {},
+						"padding": {},
+						"displayAs": "row",
+						"justify": "start",
+						"alignment": "baseline",
+						"containerWidth": "",
+						"width": "",
+						"height": ""
+					},
+					"typography": {
+						"fontSize": {
+							"desktop": "16px"
+						}
+					},
+					"normal": {
+						"color": "",
+						"bg": {},
+						"border": {},
+						"radius": {}
+					},
+					"hover": {
+						"color": "",
+						"bg": {},
+						"border": {},
+						"radius": {}
+					}
+				}
+			}
+		},
+		"formOptions": {
+			"type": "object",
+			"default": {
+				"isRedirect": true,
+				"customUrl": "",
+				"redirectPrevious": false,
+				"userRole": "subscriber"
+			}
+		},
+		"emailOptions": {
+			"type": "object",
+			"default": {
+				"user": {
+					"type": "default",
+					"messageType": "HTML",
+					"mail": {
+						"subject": "Thank you for registering",
+						"message": "<p>Thank you for registering on gutenberg plugin development!</p> \n <p>Username: [username]</p> \n <p>Password: [password]</p> \n<p>Please click the following address to login to your account:</p> \n<p>http://localhost/my-site/wp-admin/post.php/ </p>"
+					}
+				},
+				"admin": {
+					"type": "default",
+					"messageType": "HTML",
+					"mail": {
+						"subject": "New User Registration",
+						"message": "<p>New user registration on your site gutenberg plugin development</p>\n<p>Username: [username]</p>\n<p>Email: [email]</p>"
+					}
+				}
+			}
+		},
+		"termsConditions": {
+			"type": "object",
+			"default": {
+				"show": false,
+				"label": {
+					"first": "I Accept",
+					"second": "the Terms and Conditions."
+				},
+				"url": "",
+				"margin": {
+					"desktop": {},
+					"tablet": {},
+					"mobile": {}
+				},
+				"padding": {
+					"desktop": {},
+					"tablet": {},
+					"mobile": {}
+				},
+				"checkboxMargin": {
+					"desktop": {},
+					"tablet": {},
+					"mobile": {}
+				},
+				"color": {
+					"text": "",
+					"link": "",
+					"bg": "",
+					"checkbox": ""
+				},
+				"typography": {
+					"fontSize": {
+						"desktop": "15px"
+					}
+				}
+			}
+		},
+		"validation": {
+			"type": "object",
+			"default": {
+				"error": {
+					"email": {
+						"invalid": "You have used an invalid email",
+						"missing": "Email is missing",
+						"alreadyUsed": "Email is already registered with other account."
+					},
+					"username": {
+						"invalid": "You have used an invalid username",
+						"alreadyUsed": "The username already registered.",
+						"missing": "Username is missing"
+					},
+					"password": {
+						"invalid": "Your password is invalid",
+						"confirmedPass": "Your confirmed password did not match",
+						"missing": "Password is missing",
+						"custom": ""
+					},
+					"styles": {
+						"typo": {
+							"fontSize": {
+								"desktop": "11px"
+							}
+						},
+						"color": "",
+						"margin": {}
+					}
+				},
+				"success": {
+					"text": "Registration completed successfully!",
+					"styles": {
+						"isShow": false,
+						"typo": {
+							"fontSize": {
+								"desktop": "14px"
+							}
+						},
+						"color": {
+							"text": "",
+							"bg": {}
+						},
+						"margin": {},
+						"padding": {},
+						"border": {
+							"left": {
+								"color": "#00F",
+								"style": "solid",
+								"width": "2px"
+							}
+						},
+						"radius": {}
+					}
+				}
+			}
+		},
+		"message": {
+			"type": "object",
+			"default": {
+				"success": {
+					"successFulRegistration": "Registration completed successfully!"
+				},
+				"error": {
+					"default":"Something went wrong!"
+				}
+			}
+		},
+		"styles": {
+			"type": "object",
+			"default": {
+				"form": {
+					"bg": {},
+					"fieldGap": "",
+					"width": {
+						"type": "full",
+						"desktop": "500px",
+						"tablet": "",
+						"mobile": ""
+					},
+					"align": "center"
+				},
+				"buttonStyle": {
+					"container": {
+						"desktop": {
+							"display": "row",
+							"margin": {},
+							"padding": {},
+							"justify": "space-between",
+							"align":"left",
+							"gap": "10px"
+						},
+						"tablet": {
+							"display": "row",
+							"margin": {},
+							"padding": {},
+							"justify": "space-between",
+							"align": "left",
+							"gap": "10px"
+						},
+						"mobile": {
+							"display": "row",
+							"margin": {},
+							"padding": {},
+							"justify": "space-between",
+							"align": "left",
+							"gap": "10px"
+						}
+					},
+					"button": {
+						"typography": {},
+						"desktop": { "position": "", "margin": {}, "padding": {} },
+						"tablet": { "position": "", "margin": {}, "padding": {} },
+						"mobile": { "position": "", "margin": {}, "padding": {} },
+						"normal": { "color": "", "bg": {}, "desktop": { 	"border": {}, 	"shadow": [], 	"radius": {} }, "tablet": { 	"border": {}, 	"shadow": [], 	"radius": {} }, "mobile": { 	"border": {}, 	"shadow": [], 	"radius": {} }
+						},
+						"hover": {
+							"animation": "",
+							"transition": "",
+							"color": "",
+							"bg": {},
+							"desktop": {
+								"border": {},
+								"shadow": [],
+								"radius": {}
+							},
+							"tablet": {
+								"border": {},
+								"shadow": [],
+								"radius": {}
+							},
+							"mobile": {
+								"border": {},
+								"shadow": [],
+								"radius": {}
+							}
+						}
+					},
+					"spinner": {
+						"position": "",
+						"color": ""
+					},
+					"navigation": {
+						"first": {
+							"typography": {},
+							"color": "",
+							"desktop": { "margin": {} },
+							"tablet": { "margin": {} },
+							"mobile": { "margin": {} }
+						},
+						"second": {
+							"typography": {},
+							"color": "",
+							"desktop": { "margin": {} },
+							"tablet": { "margin": {} },
+							"mobile": { "margin": {} }
+						}
+					}
+				}
+			}
+		},
+		"advanced": {
+			"type": "object",
+			"default": {
+				"dimension": {
+					"padding": {
+						"desktop": {
+							"top": "60px",
+							"right": "60px",
+							"bottom": "60px",
+							"left": "60px"
+						},
+						"tablet": {
+							"top": "50px",
+							"right": "50px",
+							"bottom": "50px",
+							"left": "50px"
+						},
+						"mobile": {
+							"top": "40px",
+							"right": "40px",
+							"bottom": "40px",
+							"left": "40px"
+						}
+					}
+				},
+				"borderShadow": {
+					"normal": {
+						"radius": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"shadow": [
+							{
+								"hOffset": "0px",
+								"vOffset": "0px",
+								"blur": "0px",
+								"spreed": "0px",
+								"color": "#7090b0",
+								"isInset": false
+							}
+						]
+					}
+				},
+				"background": {
+					"normal": {
+						"type": "color",
+						"color": "rgba(255, 255, 255, 1)",
+						"gradient": {
+							"type": "radial",
+							"radialType": "ellipse",
+							"colors": [
+								{
+									"color": "rgba(58, 66, 222, 1)",
+									"position": "0"
+								},
+								{
+									"color": "rgba(176, 195, 235, 1)",
+									"position": "80"
+								}
+							],
+							"centerPositions": {
+								"x": 50,
+								"y": 50
+							},
+							"angel": 90
+						},
+						"img": {
+							"url": "",
+							"desktop": {
+								"position": "center center",
+								"xPosition": 0,
+								"yPosition": 0,
+								"attachment": "",
+								"repeat": "no-repeat",
+								"size": "",
+								"customSize": "0px"
+							},
+							"tablet": {
+								"position": "center center",
+								"xPosition": 0,
+								"yPosition": 0,
+								"attachment": "",
+								"repeat": "no-repeat",
+								"size": "",
+								"customSize": "0px"
+							},
+							"mobile": {
+								"position": "center center",
+								"xPosition": 0,
+								"yPosition": 0,
+								"attachment": "",
+								"repeat": "no-repeat",
+								"size": "",
+								"customSize": "0px"
+							}
+						},
+						"video": {
+							"url": "",
+							"loop": false
+						},
+						"transition": 0.3
+					}
+				},
+				"transform": {
+					"normal": {
+						"rotate": {
+							"desktop": {
+								"z": "",
+								"y": "",
+								"x": ""
+							},
+							"tablet": {
+								"z": "",
+								"y": "",
+								"x": ""
+							},
+							"mobile": {
+								"z": "",
+								"y": "",
+								"x": ""
+							},
+							"threeDRotate": false
+						},
+						"offset": {
+							"desktop": {
+								"x": "",
+								"y": ""
+							},
+							"tablet": {
+								"x": "",
+								"y": ""
+							},
+							"mobile": {
+								"x": "",
+								"y": ""
+							}
+						},
+						"scale": {
+							"isProportion": true,
+							"desktop": {
+								"x": "",
+								"y": "",
+								"scale": ""
+							},
+							"tablet": {
+								"x": "",
+								"y": "",
+								"scale": ""
+							},
+							"mobile": {
+								"x": "",
+								"y": "",
+								"scale": ""
+							}
+						},
+						"skew": {
+							"desktop": {
+								"x": "",
+								"y": ""
+							},
+							"tablet": {
+								"x": "",
+								"y": ""
+							},
+							"mobile": {
+								"x": "",
+								"y": ""
+							}
+						},
+						"flipX": false,
+						"flipY": false
+					},
+					"hover": {
+						"rotate": {
+							"desktop": {
+								"z": "",
+								"y": "",
+								"x": ""
+							},
+							"tablet": {
+								"z": "",
+								"y": "",
+								"x": ""
+							},
+							"mobile": {
+								"z": "",
+								"y": "",
+								"x": ""
+							},
+							"threeDRotate": false
+						},
+						"offset": {
+							"desktop": {
+								"x": "",
+								"y": ""
+							},
+							"tablet": {
+								"x": "",
+								"y": ""
+							},
+							"mobile": {
+								"x": "",
+								"y": ""
+							}
+						},
+						"scale": {
+							"isProportion": true,
+							"desktop": {
+								"x": "",
+								"y": "",
+								"scale": ""
+							},
+							"tablet": {
+								"x": "",
+								"y": "",
+								"scale": ""
+							},
+							"mobile": {
+								"x": "",
+								"y": "",
+								"scale": ""
+							}
+						},
+						"skew": {
+							"desktop": {
+								"x": "",
+								"y": ""
+							},
+							"tablet": {
+								"x": "",
+								"y": ""
+							},
+							"mobile": {
+								"x": "",
+								"y": ""
+							}
+						},
+						"flipX": false,
+						"flipY": false
+					},
+					"transition": 200
+				}
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"usesContext": [
+		"b-blocks/inputClientId"
+	],
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"viewScript": [
+		"file:./view.js",
+		"react",
+		"react-dom"
+	]
+}
