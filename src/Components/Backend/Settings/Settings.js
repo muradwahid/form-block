@@ -17,7 +17,7 @@ const Settings = (props) => {
                     <a href="https://wordpress.org/plugins/b-blocks" target="_blank" rel="noopener noreferrer">  B Blocks  </a>
                 </div>
 
-                <TabPanel className="bPlTabPanel" initialTabName="style" activeClass="activeTab" tabs={generalStyleTabs} onSelect={tabController}>
+                <TabPanel className="bPlTabPanel" activeClass="activeTab" tabs={generalStyleTabs} onSelect={tabController}>
                     {(tab) => <>
                         {"general" === tab.name && <General {...props} />}
 

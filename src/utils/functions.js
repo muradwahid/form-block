@@ -49,3 +49,42 @@ export const generateUserName = (email) => {
 };
 
 export const headingPosition = (val) => (val === 'column' || val === 'column-reverse') ? true : false;
+
+export const passwordLength = (password) => {
+  let strength = 0;
+  if (password.length >= 6) {
+    strength += 1;
+  }
+  // if (/[a-z]/.test(password)) {
+  //   strength += 1;
+  // }
+  if (/[A-Z]/.test(password)) {
+    strength += 1;
+  }
+  if (/[0-9]/.test(password)) {
+    strength += 1;
+  }
+  if (/[^a-zA-Z0-9]/.test(password)) {
+    strength += 1;
+  }
+  return strength;
+}
+
+export function decodeWpEscapedHtml(str) {
+    // 1. Decode HTML entities (WordPress escaping)
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = str;
+    let decoded = textarea.value;
+
+    // 2. Decode backslash escapes
+    decoded = decoded
+        .replace(/\\"/g, '"')
+        .replace(/\\'/g, "'")
+        .replace(/\\\\/g, "\\")
+        .replace(/\\\//g, "/")
+        .replace(/\\n/g, "\n")
+        .replace(/\\r/g, "\r")
+        .replace(/\\t/g, "\t");
+
+    return decoded.trim();
+}

@@ -1,0 +1,501 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../plugin-slug/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!../plugin-slug/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!../plugin-slug/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.grow:hover {
+  transform: scale(1.1);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.shrink:hover {
+  transform: scale(0.9);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.pulse:hover {
+  animation: pulse infinite linear 1s;
+}
+@keyframes pulse {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.pulsegrow:hover {
+  animation: pulsegrow infinite linear alternate 0.3s;
+}
+@keyframes pulsegrow {
+  100% {
+    transform: scale(1.1);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.pulseshrink:hover {
+  animation: pulseshrink infinite linear alternate 0.3s;
+}
+@keyframes pulseshrink {
+  100% {
+    transform: scale(0.9);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.push:hover {
+  animation: push linear alternate 0.3s 1;
+}
+@keyframes push {
+  25% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.pop:hover {
+  animation-name: pop;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+@keyframes pop {
+  25% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: scale(1);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.bouncein:hover {
+  transform: scale(1.2);
+  animation: bouncein linear alternate 0.5s;
+}
+@keyframes bouncein {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.bounceout:hover {
+  transform: scale(0.8);
+  animation: bounceout linear alternate 0.5s;
+}
+@keyframes bounceout {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  75% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.rotate:hover {
+  transform: rotate(4deg);
+  transition: rotate 0.2s ease-in-out;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.growrotate:hover {
+  transform: rotate(4deg) scale(1.1);
+  transition: rotate 0.2s ease-in-out;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.float:hover {
+  transform: translateY(-8px);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.sink:hover {
+  transform: translateY(8px);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.bob {
+  transition: all 0.3s ease-in-out;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.bob:hover {
+  transform: translateY(-8px);
+  animation-name: bob;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: normal, alternate;
+}
+@keyframes bob {
+  0% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.hang {
+  transition: all 0.3s ease-in-out;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.hang:hover {
+  transform: translateY(8px);
+  animation-name: hang;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: normal, alternate;
+}
+@keyframes hang {
+  0% {
+    transform: translateY(8px);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.skew:hover {
+  transform: skewX(-10deg);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.skewforward {
+  transform-origin: bottom right;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.skewforward:hover {
+  transform: skewX(-10deg);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.skewbackward {
+  transform-origin: bottom right;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.skewbackward:hover {
+  transform: skewX(10deg);
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobblevertical:hover {
+  animation: wobblevertical 1s ease-in-out 1;
+}
+@keyframes wobblevertical {
+  16.65% {
+    transform: translateY(8px);
+  }
+  33.3% {
+    transform: translateY(-6px);
+  }
+  49.95% {
+    transform: translateY(4px);
+  }
+  66.6% {
+    transform: translateY(-2px);
+  }
+  83.25% {
+    transform: translateY(1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobblehorizontal:hover {
+  animation: wobblehorizontal 1s ease-in-out 1;
+}
+@keyframes wobblehorizontal {
+  16.65% {
+    transform: translateX(8px);
+  }
+  33.3% {
+    transform: translateX(-6px);
+  }
+  49.95% {
+    transform: translateX(4px);
+  }
+  66.6% {
+    transform: translateX(-2px);
+  }
+  83.25% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobbletobottomright:hover {
+  animation: wobbletobottomright 1s ease-in-out 1;
+}
+@keyframes wobbletobottomright {
+  16.65% {
+    transform: translate(8px, 8px);
+  }
+  33.3% {
+    transform: translate(-6px, -6px);
+  }
+  49.95% {
+    transform: translate(4px, 4px);
+  }
+  66.6% {
+    transform: translate(-2px, -2px);
+  }
+  83.25% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobbletotopright:hover {
+  animation: wobbletotopright 1s ease-in-out 1;
+}
+@keyframes wobbletotopright {
+  16.65% {
+    transform: translate(8px, -8px);
+  }
+  33.3% {
+    transform: translate(-6px, 6px);
+  }
+  49.95% {
+    transform: translate(4px, -4px);
+  }
+  66.6% {
+    transform: translate(-2px, 2px);
+  }
+  83.25% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobbletop {
+  transform-origin: bottom right;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobbletop:hover {
+  animation: wobbletop 1s ease-in-out 1;
+}
+@keyframes wobbletop {
+  16.65% {
+    transform: skew(-12deg);
+  }
+  33.3% {
+    transform: skew(10deg);
+  }
+  49.95% {
+    transform: skew(-6deg);
+  }
+  66.6% {
+    transform: skew(4deg);
+  }
+  83.25% {
+    transform: skew(-2deg);
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobblebottom {
+  transform-origin: top right;
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobblebottom:hover {
+  animation: wobblebottom 1s ease-in-out 1;
+}
+@keyframes wobblebottom {
+  16.65% {
+    transform: skew(-12deg);
+  }
+  33.3% {
+    transform: skew(10deg);
+  }
+  49.95% {
+    transform: skew(-6deg);
+  }
+  66.6% {
+    transform: skew(4deg);
+  }
+  83.25% {
+    transform: skew(-2deg);
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.wobbleskew:hover {
+  animation: wobbleskew 1s ease-in-out 1;
+}
+@keyframes wobbleskew {
+  16.65% {
+    transform: skew(-12deg);
+  }
+  33.3% {
+    transform: skew(10deg);
+  }
+  49.95% {
+    transform: skew(-6deg);
+  }
+  66.6% {
+    transform: skew(4deg);
+  }
+  83.25% {
+    transform: skew(-2deg);
+  }
+  100% {
+    transform: skew(0);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.buzz:hover {
+  animation: buzz 0.15s linear infinite;
+}
+@keyframes buzz {
+  50% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+.rgfr-registerFormBtn-wrapper .rgfr-register-loader-wrapper .rgfr-signupBtn.buzzout:hover {
+  animation: buzzout 0.75s linear 1;
+}
+@keyframes buzzout {
+  10% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  20% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  30% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  40% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  60% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  70% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  80% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  90% {
+    transform: translateX(1px) rotate(0);
+  }
+  100% {
+    transform: translateX(-1px) rotate(0);
+  }
+}
+
+.wp-block-b-blocks-b-form {
+  width: 100%;
+  display: flex;
+}
+.wp-block-b-blocks-b-form * {
+  box-sizing: border-box;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkbox-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  height: 17px;
+  width: 17px;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  border-radius: 5px;
+  border: 1px solid #818181;
+  background: white;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkbox-container > input:checked ~ .b-blocks-b-form-checkmark {
+  background-color: #00f;
+  color: #2196f3;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkbox-container > input:checked ~ .b-blocks-b-form-checkmark:after {
+  display: block;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-container .b-blocks-b-form-termsConditionWrapper .b-blocks-b-form-checkbox-container .b-blocks-b-form-checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-form-button-wrapper {
+  display: flex;
+  margin-top: 15px;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-form-button-wrapper .b-blocks-form-submitBtn {
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.2s ease-in-out;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-form-button-wrapper .b-blocks-form-button-navigation-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3px;
+  font-size: 15px;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-form-button-wrapper .b-blocks-form-button-navigation-wrapper > * {
+  margin: 0;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-form-button-wrapper .b-blocks-form-button-navigation-wrapper .b-blocks-form-button-navigation-link {
+  color: #002CF0;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-form-submitBtn {
+  background-color: #ff7a00;
+  color: white;
+  border: none;
+  font-size: 15px;
+  border-radius: 4px;
+  transition: all 0.3s;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-error-message {
+  padding: 5px;
+  margin-top: 15px;
+}
+.wp-block-b-blocks-b-form .b-blocks-b-form-wrapper .b-blocks-b-form-success-message {
+  padding: 5px;
+  margin-top: 15px;
+}
+
+/*# sourceMappingURL=view.css.map*/

@@ -1,19 +1,16 @@
 import ButtonStyles from "./ButtonStyles";
-import FieldIconStyles from "./FieldIconStyles";
-import FieldStyles from "./FieldStyles";
-import FormLabelStyles from "./FormLabelStyles";
 import FormStyle from "./FormStyle";
-import GeneralStyles from "./GeneralStyles";
-import HeaderStyles from "./HeaderStyles";
-import LoginLink from "./LoginLink";
 import MessageStyles from "./MessageStyles";
-import PasswordStrengthStyles from "./PasswordStrengthStyles";
 import TermsConditionStyles from "./TermsConditionStyles";
 
 const Style = (props) => {
+    const { attributes } = props;
+    const { termsConditions, form } = attributes;
     return <>
         <FormStyle {...props} />
         <ButtonStyles {...props} />
+        {(termsConditions.show && form.formType === 'register') && <TermsConditionStyles {...props} />}
+        <MessageStyles {...props} />
         {/* <GeneralStyles {...props} />
         <HeaderStyles {...props} />
         <FieldStyles {...props} />

@@ -1,17 +1,12 @@
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import BForm from './BForm';
 
 const Frontend = (props) => {
-  const { attributes } = props;
-  const { clientId } = attributes;
-
-  return (
-    <div {...useBlockProps.save()} id={`b-form-${clientId}`}>
-      <BForm attributes={attributes} id={`b-form-${clientId}`}>
-        <InnerBlocks.Content />
+  const { attributes, content } = props;
+// console.log(content);
+  // console.log(JSON.parse(decodeWpEscapedHtml(content)));
+  return <BForm attributes={attributes} isFrontend={true} content={content}>
+          <div className="b-blocks-b-form-child-field-wrapper" dangerouslySetInnerHTML={{ __html: content }}/>
       </BForm>
-    </div>
-  );
 };
 
 export default Frontend;

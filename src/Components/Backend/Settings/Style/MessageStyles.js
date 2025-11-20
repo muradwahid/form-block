@@ -1,42 +1,30 @@
-import { __experimentalBorderBoxControl as BorderBoxControl, PanelBody, TabPanel, ToggleControl } from "@wordpress/components";
+import {  BorderBoxControl, PanelBody, TabPanel } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 
 import { Background, BoxControl, ColorControl, Typography } from "../../../../../../bpl-tools/Components";
 import { tabController } from "../../../../../../bpl-tools/utils/functions";
 
 const MessageStyles = ({ attributes, updateObj }) => {
-    const { validation } = attributes;
+    const { styles } = attributes;
+    const { message } = styles;
 
     return <PanelBody className="bPlPanelBody" title={__("Messages", 'b-blocks')} initialOpen={false} >
         <TabPanel className="bPlTabPanel small" activeClass="activeTab" tabs={[{ title: "Success", name: "success" }, { title: "Error", name: "error" }]} onSelect={tabController}>
             {tab => <>
-                {tab.name === "success" && <>
-                    <ToggleControl className='mt10' label={__("Show success message", 'b-blocks')} checked={validation.success.styles.isShow} value={validation.success.styles.isShow} onChange={(val) => updateObj('validation', val, 'success', 'styles', 'isShow')} />
+                
+                <BoxControl className="mt10" label={__("Padding", 'b-blocks')} values={message[tab.name].padding} onChange={(val) => updateObj('styles', val, "message", tab.name, "padding")} />
 
-                    {validation.success.styles.isShow && <>
-                        <BoxControl label={__("Padding", 'b-blocks')} values={validation.success.styles.padding} onChange={(val) => updateObj('validation', val, "success", "styles", "padding")} />
+                <BoxControl label={__("Margin", 'b-blocks')} values={message[tab.name].margin} onChange={(val) => updateObj('styles', val, "message", tab.name, "margin")} />
 
-                        <BoxControl label={__("Margin", 'b-blocks')} values={validation.success.styles.margin} onChange={(val) => updateObj('validation', val, "success", "styles", "margin")} />
+                <ColorControl label={__("Color", 'b-blocks')} value={message[tab.name].color.text} onChange={(val) => updateObj('styles', val, "message", tab.name, "color", "text")} />
 
-                        <ColorControl label={__("Color", 'b-blocks')} value={validation.success.styles.color.text} onChange={(val) => updateObj('validation', val, "success", "styles", "color", "text")} />
+                <Background label={__("Background", 'b-blocks')} isImage={false} value={message[tab.name].color.bg} onChange={(val) => updateObj('styles', val, "message", tab.name, "color", "bg")} />
 
-                        <Background label={__("Background", 'b-blocks')} isImage={false} value={validation.success.styles.color.bg} onChange={(val) => updateObj('validation', val, "success", "styles", "color", "bg")} />
+                <Typography label={__("Typography", 'b-blocks')} value={message[tab.name].typo} onChange={(val) => updateObj('styles', val, "message", tab.name, "typo")} />
 
-                        <Typography label={__("Typography", 'b-blocks')} value={validation.success.styles.typo} onChange={(val) => updateObj('validation', val, "success", "styles", "typo")} />
+                <BorderBoxControl label={__("Border", 'b-blocks')} value={message[tab.name].border} onChange={(val) => updateObj('styles', val, "message", tab.name, 'border')} />
 
-                        <BorderBoxControl label={__("Border", 'b-blocks')} value={validation.success.styles.border} onChange={(val) => updateObj('validation', val, 'success', 'styles', 'border')} />
-
-                        <BoxControl label={__('Border Radius')} values={validation.success.styles.radius} onChange={value => updateObj('validation', value, 'success', 'styles', 'radius')} />
-                    </>}
-                </>}
-
-                {tab.name === "error" && <>
-                    <BoxControl label={__("Margin", 'b-blocks')} values={validation.error.styles.margin} onChange={(val) => updateObj('validation', val, 'error', 'styles', 'margin')} />
-
-                    <ColorControl label={__("Color", 'b-blocks')} value={validation.error.styles.color} onChange={(val) => updateObj('validation', val, 'error', 'styles', 'color')} />
-
-                    <Typography label={__("Typography", 'b-blocks')} value={validation.error.styles.typo} onChange={(val) => updateObj('validation', val, 'error', 'styles', 'typo')} />
-                </>}
+                <BoxControl className="mt10" label={__('Border Radius')} values={message[tab.name].radius} onChange={val => updateObj('styles', val, "message", tab.name, 'radius')} />
             </>}
         </TabPanel>
     </PanelBody>

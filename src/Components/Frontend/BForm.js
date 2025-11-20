@@ -1,6 +1,14 @@
-const BForm = ({ children,attributes }) => {
-	const { form, button } = attributes;
+import { useState } from "@wordpress/element";
+import React from 'react'
+
+const BForm = ({ children, attributes, isFrontend=false }) => {
+	const { form, button, termsConditions, message } = attributes;
 	const { navigation } = button;
+
+	const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
+	const [showErrorMessage, setShowErrorMessage] = React.useState(false);
+
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const form = e.target;
@@ -26,14 +34,33 @@ const BForm = ({ children,attributes }) => {
 	}
 	// console.log("form", attributes, " : ", form);
 	
-	return <div className="wp-block-b-blocks-form-wrapper">
-		<form onSubmit={handleSubmit}>
-			{children}
+	return <div className="b-blocks-b-form-wrapper">
+		<form onSubmit={handleSubmit} className="b-blocks-b-form-container">
+				{children}
+			{(termsConditions.show && form.formType === 'register')&& (
+				<div className="b-blocks-b-form-termsConditionWrapper">
+					<label className="b-blocks-b-form-checkbox-container">
+						<input type="checkbox" required />
+						<span className="b-blocks-b-form-checkmark"></span>
+					</label>
+					{/* <input type="checkbox" name="checkbox" required /> */}
+					<label className="b-blocks-b-blocks-termsConditionWrapper-first">{termsConditions.label.first}</label>
+					<a className="b-blocks-b-blocks-termsConditionWrapper-link" href={termsConditions.url}>{termsConditions.label.second}</a>
+				</div>
+			)}
 			<div className="b-blocks-form-button-wrapper">
 				<button className='b-blocks-form-submitBtn' type="submit">{button.button.text}</button>
 				{(navigation.isNavigation &&(navigation.first.text || navigation.second.text)) && <div className="b-blocks-form-button-navigation-wrapper"><p className="b-blocks-form-button-navigation-text">{navigation.first.text}</p> <a className="b-blocks-form-button-navigation-link" href={navigation.second.url}>{navigation.second.text}</a> </div>}
 			</div>
 		</form>
+
+		{(showSuccessMessage && message.success.successFulRegistration) && <div className="b-blocks-b-form-success-message">
+				<span>{message.success.successFulRegistration}</span>
+		</div>}
+		
+		{(showErrorMessage && message.error.default) && <div className="b-blocks-b-form-error-message">
+				<span>{message.error.default}</span>
+			</div>}
 	</div>
 }
 export default BForm;

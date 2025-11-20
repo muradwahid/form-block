@@ -5,39 +5,131 @@ $yellow: #fadb14;
 $green: #7cb305;
 @import './assets/css/_animation.scss';
 
-.wp-block-b-blocks-b-form{
+.wp-block-b-blocks-b-form {
 	width: 100%;
+	display: flex;
 
 	* {
 		box-sizing: border-box;
 	}
 
-	.wp-block-b-blocks-form-wrapper {
+	.b-blocks-b-form-wrapper {
 		box-sizing: border-box;
 		width: 100%;
+		padding: 10px 10px 10px 10px;
+
 		// display: flex;
-		.b-blocks-form-button-wrapper{
-			.b-blocks-form-button-navigation-wrapper{
+		.b-blocks-b-form-container {
+			// display: grid;
+			// gap:10px;
+
+			.b-blocks-b-form-termsConditionWrapper {
+				display: flex;
+				align-items: center;
+				gap: 4px;
+
+				.b-blocks-b-form-checkbox-container {
+					display: block;
+					position: relative;
+					cursor: pointer;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					user-select: none;
+					height: 17px;
+					width: 17px;
+				}
+
+				.b-blocks-b-form-checkbox-container input {
+					position: absolute;
+					opacity: 0;
+					cursor: pointer;
+					height: 0;
+					width: 0;
+				}
+
+				.b-blocks-b-form-checkmark {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 17px;
+					width: 17px;
+					border-radius: 5px;
+					border: 1px solid #818181;
+					background: white;
+				}
+
+				.b-blocks-b-form-checkbox-container>input:checked~.b-blocks-b-form-checkmark {
+					background-color: #00f;
+					color: #2196f3;
+				}
+
+				.b-blocks-b-form-checkmark:after {
+					content: "";
+					position: absolute;
+					display: none;
+				}
+
+				.b-blocks-b-form-checkbox-container>input:checked~.b-blocks-b-form-checkmark:after {
+					display: block;
+				}
+
+				.b-blocks-b-form-checkbox-container .b-blocks-b-form-checkmark:after {
+					left: 5px;
+					top: 2px;
+					width: 4px;
+					height: 7px;
+					border: solid white;
+					border-width: 0 2px 2px 0;
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		.b-blocks-form-button-wrapper {
+			display: flex;
+			margin-top: 15px;
+
+			.b-blocks-form-submitBtn {
+				width: fit-content;
+				transition: all 0.2s ease-in-out;
+			}
+
+			.b-blocks-form-button-navigation-wrapper {
 				display: flex;
 				flex-wrap: nowrap;
 				gap: 3px;
 				font-size: 15px;
-				>*{
-					margin:0;
+
+				>* {
+					margin: 0;
 				}
-				.b-blocks-form-button-navigation-text{}
+
+				.b-blocks-form-button-navigation-text {}
+				.b-blocks-form-button-navigation-link{
+					color:#002CF0;
+				}
 			}
 		}
+
 		.b-blocks-form-submitBtn {
-				background-color: #ff7a00;
-				color: white;
-				border: none;
-				font-size: 15px;
-				border-radius: 4px;
-				transition: all 0.3s;
-				padding: 10px 30px;
-				cursor: pointer;
-			}
+			background-color: #ff7a00;
+			color: white;
+			border: none;
+			font-size: 15px;
+			border-radius: 4px;
+			transition: all 0.3s;
+			padding: 10px 30px;
+			cursor: pointer;
+		}
+
+		.b-blocks-b-form-error-message{
+			padding:5px;
+			margin-top: 15px;
+		}
+		.b-blocks-b-form-success-message{
+			padding:5px;
+			margin-top: 15px;
+		}
 
 	}
 }

@@ -1,11 +1,13 @@
 import { Flex, PanelBody, TextControl, ToggleControl } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { Label } from '../../../../../../bpl-tools/Components';
-
 const ButtonContent = ({ attributes, updateObj }) => {
     const { button } = attributes;
     const { navigation } = button;
-    return <PanelBody className="bPlPanelBody" initialOpen={true} title={__("Button", "b-blocks")}>
+
+
+
+    return <PanelBody className="bPlPanelBody" initialOpen={false} title={__("Button", "b-blocks")}>
         <Label className="mt0 mb10">
             <strong>Submit Button</strong>
         </Label>

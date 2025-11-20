@@ -1,4 +1,5 @@
-import { passwordLength } from "../../hooks/usePassStrengthMeter";
+import { passwordLength } from "../../../utils/functions";
+
 
 const PasswordStrengthText = ({ password, attributes }) => {
     const { password: pass, formFields } = attributes;

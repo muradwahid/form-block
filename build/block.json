@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "title": "Form",
   "category": "widgets",
-  "description": "Short description of the block",
+  "description": "Create Beautiful and Professional Login, Register or any other custom Forms easily with a few clicks.",
   "keywords": [
     "form",
     "register",
@@ -22,7 +22,7 @@
     "form": {
       "type": "object",
       "default": {
-        "formType": "register"
+        "formType": ""
       }
     },
     "align": {
@@ -835,7 +835,9 @@
         "success": {
           "successFulRegistration": "Registration completed successfully!"
         },
-        "error": {}
+        "error": {
+          "default": "Something went wrong!"
+        }
       }
     },
     "styles": {
@@ -843,14 +845,33 @@
       "default": {
         "form": {
           "bg": {},
-          "fieldGap": "",
           "width": {
             "type": "full",
-            "desktop": "500px",
+            "desktop": "100%",
             "tablet": "",
             "mobile": ""
           },
-          "align": "center"
+          "align": "center",
+          "border": {},
+          "shadow": [],
+          "desktop": {
+            "margin": {},
+            "padding": {},
+            "radius": {},
+            "fieldGap": 10
+          },
+          "tablet": {
+            "margin": {},
+            "padding": {},
+            "radius": {},
+            "fieldGap": ""
+          },
+          "mobile": {
+            "margin": {},
+            "padding": {},
+            "radius": {},
+            "fieldGap": ""
+          }
         },
         "buttonStyle": {
           "container": {
@@ -859,28 +880,32 @@
               "margin": {},
               "padding": {},
               "justify": "space-between",
-              "align": "left",
+              "align": "flex-start",
               "gap": "10px"
             },
             "tablet": {
               "display": "row",
               "margin": {},
               "padding": {},
-              "justify": "space-between",
-              "align": "left",
-              "gap": "10px"
+              "justify": "",
+              "align": "",
+              "gap": ""
             },
             "mobile": {
               "display": "row",
               "margin": {},
               "padding": {},
-              "justify": "space-between",
-              "align": "left",
-              "gap": "10px"
+              "justify": "",
+              "align": "",
+              "gap": ""
             }
           },
           "button": {
-            "typography": {},
+            "typography": {
+              "fontSize": {
+                "desktop": "15px"
+              }
+            },
             "desktop": {
               "position": "",
               "margin": {},
@@ -968,6 +993,50 @@
                 "margin": {}
               }
             }
+          }
+        },
+        "message": {
+          "success": {
+            "typo": {
+              "fontSize": {
+                "desktop": "14px"
+              }
+            },
+            "color": {
+              "text": "",
+              "bg": {}
+            },
+            "margin": {},
+            "padding": {},
+            "border": {
+              "left": {
+                "color": "#00F",
+                "style": "solid",
+                "width": "2px"
+              }
+            },
+            "radius": {}
+          },
+          "error": {
+            "typo": {
+              "fontSize": {
+                "desktop": "14px"
+              }
+            },
+            "color": {
+              "text": "",
+              "bg": {}
+            },
+            "margin": {},
+            "padding": {},
+            "border": {
+              "left": {
+                "color": "#ff2c2c",
+                "style": "solid",
+                "width": "2px"
+              }
+            },
+            "radius": {}
           }
         }
       }
@@ -1234,10 +1303,7 @@
   },
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
+  "render": "file:./render.php",
   "style": "file:./view.css",
-  "viewScript": [
-    "file:./view.js",
-    "react",
-    "react-dom"
-  ]
+  "viewScript": "file:./view.js"
 }

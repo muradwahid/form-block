@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: B Form
- * Description: Short description of the plugin
+ * Description: Create Beautiful and Professional Login, Register or any other custom Forms easily with a few clicks.
  * Version: 1.0.0
  * Author: bPlugins
  * Author URI: https://bplugins.com

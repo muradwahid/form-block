@@ -1,20 +1,23 @@
-// import { createRoot } from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 
-// import './style.scss';
-// import Style from './Components/Common/Style';
-// import BForm from './Components/Frontend/BForm';
+import './style.scss';
+import Style from './Components/Common/Style';
+import BForm from './Components/Frontend/BForm';
+import Frontend from './Components/Frontend/Frontend';
 
-// document.addEventListener('DOMContentLoaded', () => {
-// 	const blockNameEls = document.querySelectorAll('.wp-block-b-blocks-b-form');
-// 	blockNameEls.forEach(blockNameEl => {
-// 		const attributes = JSON.parse(blockNameEl.dataset.attributes);
+document.addEventListener('DOMContentLoaded', () => {
+	const bFormEls = document.querySelectorAll('.wp-block-b-blocks-b-form');
+	bFormEls.forEach(bFormEl => {
+    const attributes = JSON.parse(bFormEl.dataset.attributes);
+    const content =
+      bFormEl.querySelector('template#bFormPhpGetContent');
 
-// 		createRoot(blockNameEl).render(<>
-// 			<Style attributes={attributes} id={blockNameEl.id} />
-// 			<div>lorem</div>
-// 			{/* <BForm attributes={attributes} /> */}
-// 		</>);
+    // const content = JSON.parse(bFormEl.dataset.content);
+		createRoot(bFormEl).render(<>
+			<Style attributes={attributes} id={bFormEl.id} />
+      <Frontend attributes={attributes} content={content} />
+		</>);
 
-// 		blockNameEl?.removeAttribute('data-attributes');
-// 	});
-// });
+		bFormEl?.removeAttribute('data-attributes');
+	});
+});

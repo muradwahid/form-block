@@ -8,9 +8,10 @@ import Frontend from './Components/Frontend/Frontend';
 // import { InnerBlocks } from '@wordpress/block-editor';
 // import BForm from './Components/Frontend/BForm';
 import './style.scss'
+import { InnerBlocks } from '@wordpress/block-editor';
 
 registerBlockType(metadata, {
 	icon: blockIcon,
 	edit: Edit,
-	// save:Frontend,
+	save: InnerBlocks.Content,
 });

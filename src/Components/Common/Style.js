@@ -1,129 +1,142 @@
 import generateCSS from '../../../../bpl-tools/Advanced/generateCSS';
-import { getBackgroundCSS, getBorderBoxCSS, getBorderCSS, getBoxCSS, getMultiShadowCSS, getTypoCSS, isValidCSS } from '../../../../bpl-tools/utils/getCSS';
-
-import ResponsiveMobile from './ResponsiveMobile';
-import ResponsiveTablet from './ResponsiveTablet';
-import StyleThree from './StyleThree';
-import StyleTwo from './StyleTwo';
-import { headingPosition } from '../../utils/functions';
+import { getBackgroundCSS, getBorderBoxCSS, getBoxCSS, getMultiShadowCSS, getTypoCSS, isValidCSS } from '../../../../bpl-tools/utils/getCSS';
 
 const Style = ({ attributes, id, isBackend = false }) => {
-	const { formHeader, formFields, general, termsConditions, formLabel, button, validation } = attributes;
+	const { styles, termsConditions } = attributes;
+	const { form, buttonStyle, message } = styles;
+	const { container, button, navigation } = buttonStyle;
+	const { first, second } = navigation;
+	const { success, error } = message;
+
 	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .wp-block-b-blocks-register-form-wrapper`;
-	const mainWrapper = `${blockSl} .rgfr-register-form-main-wrapper`;
-	const formWrapper = `${mainWrapper} .rgfr-register-form`;
-	const formContainer = `${formWrapper} .rgfr-registerForm-container`;
-	const formEl = `${formContainer} .rgfr-register-form-wrapper`;
-	const inputWrapper = `${formEl} .rgfr-inputField-wrapper`;
-	const inputField = `${inputWrapper} .rgfr-register-input-field`;
-	const logoWrapper = `${formEl} .rgfr-register-logo-wrapper`;
-	const logoEl = `${logoWrapper} .rgrf-register-logo`;
-	const headingWrapper = `${logoWrapper} .rgfr-register-heading`;
-	const formImage = `${formWrapper} .rgfr-register-image-wrapper`;
+	const blockSl = `${mainSl} .b-blocks-b-form-wrapper`;
+	const formSl = `${blockSl} .b-blocks-b-form-container`;
+	const buttonContainerSl = `${formSl} .b-blocks-form-button-wrapper`;
+	const buttonSl = `${buttonContainerSl} .b-blocks-form-submitBtn`;
+	const navigationSl = `${buttonContainerSl} .b-blocks-form-button-navigation-wrapper`;
+	const navigationFirstSl = `${navigationSl} .b-blocks-form-button-navigation-text`;
+	const navigationSecondSl = `${navigationSl} .b-blocks-form-button-navigation-link`;
+	const checkBoxSl = `${formSl} .b-blocks-b-form-termsConditionWrapper`;
+	const successSl = `${blockSl} .b-blocks-b-form-success-message`;
+	const errorSl = `${blockSl} .b-blocks-b-form-error-message`;
+
+	const childFileSl = isBackend ? '.block-editor-inner-blocks .block-editor-block-list__layout' : `${mainSl} .b-blocks-b-form-child-field-wrapper`;
+
+	const mainAlign = ` ${form.align === 'left' ? 'justify-content: flex-start' : form.align === 'center' ? 'justify-content: center' : form.align === 'right' ?'justify-content: flex-end':''}
+	`
 
 	return <>
-		<style dangerouslySetInnerHTML={{ __html: ` ${generateCSS(id, attributes.advanced, isBackend)} `, }} ></style>
+		<style dangerouslySetInnerHTML={{ __html: ` ${generateCSS(id, attributes.advanced, isBackend)}`, }} ></style>
 
 		<style dangerouslySetInnerHTML={{
 			__html: `
-		${getTypoCSS('', formHeader.header.title.typography)?.googleFontLink}
-		${getTypoCSS('', formHeader.header.subTitle.typography)?.googleFontLink}
-		${getTypoCSS('', formFields.input.typography)?.googleFontLink}
-		${getTypoCSS('', formLabel.typography)?.googleFontLink}
-		${getTypoCSS('', termsConditions.typography)?.googleFontLink}
-		${getTypoCSS('', button.signup.typography)?.googleFontLink}
-		${getTypoCSS('', button.signin.typography)?.googleFontLink}
-		${getTypoCSS('', validation.success.styles.typo)?.googleFontLink}
-		${getTypoCSS('', validation.error.styles.typo)?.googleFontLink}
-	${mainWrapper}{
-		${isValidCSS('justify-content', getBoxCSS(general.containerBox.alignment.desktop))}
-	} 
-	${formWrapper}{
-		${isValidCSS('width', general.containerBox.width.desktop)}
-		${formHeader.image.img.url ? isValidCSS('flex-direction', formHeader.image.position.desktop) : ''}
-		${isValidCSS('justify-content', formHeader.image.img.url ? 'normal' : 'center')}
-	}
-	${formContainer}{
-		${isValidCSS('width', general.formWrapper.width.desktop)}
-		${isValidCSS('margin', getBoxCSS(general.formWrapper.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(general.formWrapper.padding.desktop))}
-		${getBorderCSS(general.formWrapper.border)}
-		${getBackgroundCSS(general.formWrapper.bg)};
-		${isValidCSS('box-shadow', getMultiShadowCSS(general.formWrapper.shadow))}
-	}
-	${formEl}{
-		${isValidCSS('width', general.form.width.desktop)}
-		${isValidCSS('margin', getBoxCSS(general.form.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(general.form.padding.desktop))}
-		${getBorderCSS(general.form.border)}
-		${getBackgroundCSS(general.form.bg)}
-		${isValidCSS('box-shadow', getMultiShadowCSS(general.form.shadow))}
-	}
-	
-	${formImage}{
-		${isValidCSS('margin', getBoxCSS(formHeader.image.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(formHeader.image.padding.desktop))}
-		${getBorderBoxCSS(formHeader.image.border)}
-		${isValidCSS('border-radius', getBoxCSS(formHeader.image.radius))}
-	}
-	${formImage} img {
-		${isValidCSS('height', formHeader.image.height.desktop)}
-		${isValidCSS('width', formHeader.image.width.desktop)}
-	}
-	${logoWrapper}{
-		${isValidCSS('flex-direction', formHeader.header.logo.position.desktop)}
-		${isValidCSS('width', formHeader.header.width.desktop)}
-		${isValidCSS('height', formHeader.header.height.desktop)}
-		${isValidCSS('margin', getBoxCSS(formHeader.header.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(formHeader.header.padding.desktop))}
-		${getBorderBoxCSS(formHeader.header.border)}
-		${isValidCSS('border-radius', getBoxCSS(formHeader.header.radius))}
-		${getBackgroundCSS(formHeader.header.bg)}
-	}
-	${logoEl} img{
-		${isValidCSS('height', formHeader.header.logo.height.desktop)}
-		${isValidCSS('width', formHeader.header.logo.width.desktop)}
-		${isValidCSS('margin', getBoxCSS(formHeader.header.logo.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(formHeader.header.logo.padding.desktop))}
-		${getBorderBoxCSS(formHeader.header.logo.border)}
-		${isValidCSS('border-radius', getBoxCSS(formHeader.header.logo.radius))}
-		${isValidCSS('box-shadow', getMultiShadowCSS(formHeader.header.logo.shadow))}
-	}
-	${headingWrapper}{
-		${isValidCSS('width', headingPosition(formHeader.header.logo.position.desktop) ? '100%' : `calc(100% - ${formHeader.header.logo.width.desktop} + ${formHeader.header.logo.url.url ? '0px' : formHeader.header.logo.width.desktop})`)}
-	}
+			${getTypoCSS('', button.typography).googleFontLink}
+			${getTypoCSS('', first.typography).googleFontLink}
+			${getTypoCSS('', second.typography).googleFontLink}
+			${getTypoCSS('', termsConditions.typography).googleFontLink}
+			${getTypoCSS('', success.typo).googleFontLink}
+			${getTypoCSS('', error.typo).googleFontLink}
 
-		${getTypoCSS(`${headingWrapper} h4`, formHeader.header.title.typography).styles}
-		${headingWrapper} h4{
-		${isValidCSS('margin', getBoxCSS(formHeader.header.title.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(formHeader.header.title.padding.desktop))}
-		${isValidCSS('color', formHeader.header.title.color)}
-		${getBackgroundCSS(formHeader.header.title.bg)}
-		${getBorderBoxCSS(formHeader.header.title.border)}
-		${isValidCSS('border-radius', getBoxCSS(formHeader.header.title.radius))}
-	}
+			${getTypoCSS(navigationFirstSl, first.typography).styles}
+			${getTypoCSS(navigationSecondSl, second.typography).styles}
+			${getTypoCSS(buttonSl, button.typography).styles}
+			${getTypoCSS(checkBoxSl, termsConditions.typography).styles}
+			${getTypoCSS(successSl, success.typo).styles}
+			${getTypoCSS(errorSl, error.typo).styles}
 
-		${getTypoCSS(`${headingWrapper} .rgfr-register-subHeading`, formHeader.header.subTitle.typography).styles}
-		${headingWrapper} .rgfr-register-subHeading{
-		${isValidCSS('margin', getBoxCSS(formHeader.header.subTitle.margin.desktop))}
-		${isValidCSS('padding', getBoxCSS(formHeader.header.subTitle.padding.desktop))}
-		${isValidCSS('color', formHeader.header.subTitle.color)}
-		${getBackgroundCSS(formHeader.header.subTitle.bg)}
-		${getBorderBoxCSS(formHeader.header.subTitle.border)}
-		${isValidCSS('border-radius', getBoxCSS(formHeader.header.subTitle.radius))}
-	}
+			${mainSl}{
+				${form.width.type === 'custom' ? mainAlign:''}
+			}
 
-	${inputField}{
-		${isValidCSS('margin', getBoxCSS(formFields.input.margin.desktop))}
-	}
+			${blockSl}{
+				${getBackgroundCSS(form.bg)}
+				${form.width.type === 'custom' ? isValidCSS('width', form.width.desktop) : ''}
+				${isValidCSS('margin', getBoxCSS(form.desktop.margin))}
+				${isValidCSS('padding', getBoxCSS(form.desktop.padding))}
+				${getBorderBoxCSS(form.border)}
+				${isValidCSS('border-radius', getBoxCSS(form.desktop.radius))}
+				${isValidCSS('box-shadow', getMultiShadowCSS(form.shadow))}
+			}
+
+			${childFileSl}{
+				display:grid;
+				${isValidCSS('gap', form.desktop.fieldGap ? form.desktop.fieldGap+'px':'')}
+			}
+			
+			${buttonContainerSl}{
+				${isValidCSS('margin', getBoxCSS(container.desktop.margin))}
+				flex-direction:${container.desktop.display};
+				${container.desktop.display === 'row' ? 'align-items: center;' : `align-items:${container.desktop.align};`}
+				${isValidCSS('justify-content',container.desktop.justify)}
+				${container.desktop.display === 'row'? '' : isValidCSS('gap',container.desktop.gap)}
+			}
+
+			${buttonSl}{
+					${isValidCSS('margin',getBoxCSS(button.desktop.margin))}
+					${isValidCSS('padding', getBoxCSS(button.desktop.padding))}
+					${isValidCSS('color', button.normal.color)}
+					${getBackgroundCSS(button.normal.bg)}
+					${getBorderBoxCSS(button.normal.desktop.border)}
+					${isValidCSS('border-radius', getBoxCSS(button.normal.desktop.radius))}
+					${isValidCSS('box-shadow', getMultiShadowCSS(button.normal.desktop.shadow))}
+			}
+
+			${buttonSl}:hover{
+					${isValidCSS('color', button.hover.color)}
+					${getBackgroundCSS(button.hover.bg)}
+					${getBorderBoxCSS(button.hover.desktop.border)}
+					${isValidCSS('border-radius', getBoxCSS(button.hover.desktop.radius))}
+					${isValidCSS('box-shadow', getMultiShadowCSS(button.hover.desktop.shadow))}
+			}
+
+			${navigationFirstSl}{
+				${isValidCSS('color', first.color)}
+				${isValidCSS('margin', getBoxCSS(first.desktop.margin))}
+			}
+
+			${navigationSecondSl}{
+				${isValidCSS('color', second.color)}
+				${isValidCSS('margin', getBoxCSS(second.desktop.margin))}
+			}
+
+			${checkBoxSl}{
+				${isValidCSS('margin', getBoxCSS(termsConditions.margin.desktop))}
+        ${isValidCSS('padding', getBoxCSS(termsConditions.padding.desktop))}
+        ${isValidCSS('color', getBoxCSS(termsConditions.color.text))}
+        ${isValidCSS('background', getBoxCSS(termsConditions.color.bg))}
+			}
+
+			${checkBoxSl} .b-blocks-b-form-checkbox-container{
+					${isValidCSS('margin', getBoxCSS(termsConditions.checkboxMargin.desktop))}
+			}
+
+			${checkBoxSl} .b-blocks-b-blocks-termsConditionWrapper-link{
+				${isValidCSS('color', termsConditions.color.link)}
+			}
+
+			${checkBoxSl} .b-blocks-b-form-checkbox-container>input:checked ~ .b-blocks-b-form-checkmark {
+				${isValidCSS('background', termsConditions.color.checkbox)}
+			}
+
+			${successSl}{
+				${isValidCSS('margin',getBoxCSS(success.margin))}
+				${isValidCSS('padding', getBoxCSS(success.padding))}
+				${isValidCSS('color', success.color.text)}
+				${getBackgroundCSS(success.color.bg)}
+				${getBorderBoxCSS(success.border)}
+				${isValidCSS('border-radius', getBoxCSS(success.radius))}
+			}
+			${errorSl}{
+				${isValidCSS('margin',getBoxCSS(error.margin))}
+				${isValidCSS('padding', getBoxCSS(error.padding))}
+				${isValidCSS('color', error.color.text)}
+				${getBackgroundCSS(error.color.bg)}
+				${getBorderBoxCSS(error.border)}
+				${isValidCSS('border-radius', getBoxCSS(error.radius))}
+			}
 
 	`.replace(/\s+/g, ' ').trim(),
-		}}></style>
-		<StyleTwo {...{ attributes, id }} />
-		<StyleThree {...{ attributes, id }} />
-		<ResponsiveTablet {...{ attributes, id }} />
-		<ResponsiveMobile {...{ attributes, id }} />
+		}}/>
 	</>;
 };
 

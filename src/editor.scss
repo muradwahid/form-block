@@ -1,49 +1,69 @@
 $primaryColor: #4527a4;
 
-.controller-width {
-  width: 148px;
-}
+.wp-block-b-blocks-b-form{
+  .b-blocks-b-form-preselectFormSkeleton-wrapper{
+    background-color: #ffffff;
+      width: 100%;
+    .b-blocks-b-form-skeleton-wrapper{
+      background-color: #ffffff;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        .b-blocks-b-form-skeleton{
+            width: 250px;
+            display: grid;
+            gap: 15px;
+            border: 1px solid #ccc;
+            padding:10px;
+            border-radius: 10px;
+            cursor: pointer;
+            height: 146px;
+          .b-blocks-b-form-skeleton-field{
+            height: 20px;
+            width: 100%;
+            border-radius: 38px;
+            background-color: #e7e7e7;
+            animation:fieldColor 5s linear infinite;
+          }
+          .b-blocks-b-form-skeleton-button-wrapper{
+              display: flex;
+              justify-content: space-between;
+              &>:first-child{
+                height: 20px;
+                width: 40px;
+                border-radius: 6px;
+                background-color: #e7e7e7;
+                        animation: fieldColor 5s linear infinite;
+              }
+              &>:nth-child(2){
+                  height: 20px;
+                  width: 100px;
+                  border-radius: 38px;
+                  background-color: #e7e7e7;
+                  justify-content: space-between;
+                          animation: fieldColor 5s linear infinite;
+              }
+          }
 
-.panelInputFieldAddButton {
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
-
-  button {
-    span {
-      margin-top: 5px;
-      margin-right: 5px;
+          @keyframes fieldColor{
+            0%{
+              background-color: #dddddd;
+            }
+            50%{
+              background-color: #e7e7e7;
+            }
+            100%{
+              background-color: #dddddd;
+            }
+          }
+        }
+                                    .b-blocks-b-form-skeleton-form-title {
+                                      font-size: 16px;
+                                      margin-top: 7px;
+                                      margin-left: 7px;
+                                      letter-spacing: 0.5px;
+                                    }
     }
   }
 }
-
-.width130 {
-  width: 130px;
-}
-
-.width120 {
-  width: 120px;
-}
-
-.components-base-control__label {
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  line-height: 1.4;
-  text-transform: none !important;
-  display: inline-block;
-  margin-bottom: calc(3px) !important;
-  padding: 0px;
-}
-
-.rgfr-spinnerAlert {
-  border-left: 2px solid orangered;
-  padding-left: 10px;
-}
-
-.block-editor-inner-blocks{
-  width: 100%;
-}
-
-// .block-editor-block-list__layout:not(.block-list-appender)> :not(.block-list-appender):not(:last-child) {
-//   margin-bottom: 30px;
-// }
